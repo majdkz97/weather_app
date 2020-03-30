@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/models/DailyForecast.dart';
+import 'package:weatherapp/models/HourlyForecast.dart';
 import 'package:weatherapp/repositories/api/weather/weather_api.dart';
 
 class WeatherPage extends StatefulWidget {
@@ -14,13 +16,12 @@ class _WeatherPageState extends State<WeatherPage> {
       body: Center(
         child: GestureDetector(
             onTap: () async {
-              Map<String,dynamic> result = await WeatherApi().getWeatherForecast();
-              print(result);
 
+              List<DailyForecast> result = await WeatherApi().getWeatherForecast();
+              print(result.length);
               setState(() {
                 text = result.toString();
               });
-
 //              Navigator.pop(context);
 //              print('Pop Route: ${Router.weatherRoute}');
 //              print('Current Route: ${Router.homeRoute}');
