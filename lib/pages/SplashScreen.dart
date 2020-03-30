@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -9,9 +10,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      body: Center(
-        child: Text('Splash Screen'),
+       body: Center(
+        child: GestureDetector(
+            onTap: (){
+              Navigator.pushReplacementNamed(context,Router.homeRoute);
+            },
+            child: Text('Splash Screen')),
       ),
     );
   }
