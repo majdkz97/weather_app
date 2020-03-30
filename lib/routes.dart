@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/pages/HomePage.dart';
-import 'package:weatherapp/pages/SplashScreen.dart';
+import 'package:weatherapp/pages/home_page.dart';
+import 'package:weatherapp/pages/splash_screen.dart';
 
-import 'pages/WeatherPage.dart';
+import 'pages/weather_page.dart';
 
 class Router {
   static const String splashScreenRoute = '/';
