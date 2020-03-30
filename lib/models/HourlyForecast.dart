@@ -21,7 +21,7 @@ class HourlyForecast {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['dt'] = this.dateTime;
+    data['dt'] = dateTimeToEpochsInSeconds(this.dateTime);
     data['main'] = {'temp':this.temperature,'humidity':this.humidity};
     data['wind'] = {'speed':this.windSpeed};
     return data;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/models/DailyForecast.dart';
-import 'package:weatherapp/models/HourlyForecast.dart';
-import 'package:weatherapp/repositories/api/weather/weather_api.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weatherapp/blocs/weather_bloc/bloc.dart';
+import 'package:weatherapp/blocs/weather_bloc/weather_bloc.dart';
 
 class WeatherPage extends StatefulWidget {
   @override
@@ -10,24 +10,57 @@ class WeatherPage extends StatefulWidget {
 
 class _WeatherPageState extends State<WeatherPage> {
   String text = 'Weather Screen';
+
+  @override
+  void initState() {
+    super.initState();
+   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: GestureDetector(
-            onTap: () async {
-
-              List<DailyForecast> result = await WeatherApi().getWeatherForecast();
-              print(result.length);
-              setState(() {
-                text = result.toString();
-              });
-//              Navigator.pop(context);
-//              print('Pop Route: ${Router.weatherRoute}');
-//              print('Current Route: ${Router.homeRoute}');
-              },
-            child: Text(text)),
+      body: BlocProvider<WeatherBloc>(
+        create: (context) => WeatherBloc()..
+        add(FetchWeather(dateTime: DateTime.now().add(Duration(days: 1)))),
+        child: WeatherPageBuilder(),
       ),
+    );
+  }
+}
+
+class WeatherPageBuilder extends StatefulWidget {
+  @override
+  _WeatherPageBuilderState createState() => _WeatherPageBuilderState();
+}
+
+class _WeatherPageBuilderState extends State<WeatherPageBuilder> {
+  @override
+  Widget build(BuildContext context) {
+    return  BlocBuilder<WeatherBloc, WeatherState>(
+      bloc: BlocProvider.of<WeatherBloc>(context),
+      builder: (context, state) {
+        if (state is WeatherIsLoadingState)
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        else if (state is WeatherIsLoadedState)
+          return Container(
+            child: Center(
+              child: Text(state.dailyForecasts.toJson().toString()),
+            ),
+          );
+        else if (state is WeatherIsLoadErrorState)
+          return Center(
+            child: RaisedButton(
+                onPressed: () {
+                  BlocProvider.of<WeatherBloc>(context)..add(FetchWeather(
+                      dateTime: DateTime.now().add(Duration(days: 1))));
+                },
+                child: Text('Error')),
+          );
+        else
+          return Container();
+      },
     );
   }
 }
