@@ -1,5 +1,7 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherapp/routes.dart';
+
+import '../routes.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,13 +12,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Center(
-        child: GestureDetector(
-            onTap: (){
-              Navigator.pushReplacementNamed(context,Router.homeRoute);
-            },
-            child: Text('Splash Screen')),
-      ),
+       body: FlareActor('assets/splash_screen.flr',animation: 'start',fit: BoxFit.cover,callback: (value){
+         Navigator.pushReplacementNamed(context,Router.homeRoute);
+       },),
     );
   }
 }
