@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
    Color darkFillColor = Colors.white;
-   Color darkFocusColor = Colors.white.withOpacity(0.12);
+Color dartBackground =   Color(0xFF241E30);
+
+Color darkFocusColor = Colors.white.withOpacity(0.12);
    ColorScheme darkColorScheme = ColorScheme(
     primary: const Color(0xFFFF8383),
     primaryVariant: const Color(0xFF1CDEC9),
@@ -13,7 +15,7 @@ import 'package:flutter/material.dart';
     error: darkFillColor,
     onError: darkFillColor,
     onPrimary: darkFillColor,
-    onSecondary: darkFillColor,
+    onSecondary: Color(0xFF241E30),
     onSurface: darkFillColor,
     brightness: Brightness.dark,
   );

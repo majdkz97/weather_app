@@ -6,7 +6,8 @@ class HourlyForecast {
   int windSpeed;
   int humidity;
   int temperature;
-
+  String icon;
+  String status;
 
   HourlyForecast({this.dateTime,
     this.humidity, this.temperature, this.windSpeed
@@ -17,6 +18,8 @@ class HourlyForecast {
     windSpeed = windSpeedInMhToKMh(json['wind']['speed'].toDouble());
     temperature = temperatureInKelvinToCelsius(json['main']['temp'].toDouble());
     humidity = json['main']['humidity'];
+    status = json['weather'].first['description'].toString().split(' ').map((e) => e=e.replaceRange(0, 1, e[0].toUpperCase())).join('\n');
+    icon = json['weather'].first['icon'].toString();
   }
 
   Map<String, dynamic> toJson() {
@@ -24,6 +27,8 @@ class HourlyForecast {
     data['dt'] = dateTimeToEpochsInSeconds(this.dateTime);
     data['main'] = {'temp':this.temperature,'humidity':this.humidity};
     data['wind'] = {'speed':this.windSpeed};
+    data['weather'] = [{'description':status,'icon':icon}];
+
     return data;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherapp/repositories/storage_service.dart';
 
 import '../routes.dart';
 
@@ -13,7 +14,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Center(
         child: GestureDetector(
-            onTap: (){
+            onTap: () async {
+             await StorageService().clear();
               Navigator.pushNamed(context, Router.weatherRoute);
             },
             child: Text('Home Screen')),
