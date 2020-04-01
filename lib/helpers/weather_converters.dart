@@ -6,5 +6,7 @@ int windSpeedInMhToKMh(double windSpeed) => (windSpeed * 0.277778).ceil();
 
 int temperatureInKelvinToCelsius(double temperature) => (temperature - 273.15).ceil();
 
+int temperatureInCelsiusToKelvin(double temperature) => (temperature + 273.15).ceil();
+
 
 

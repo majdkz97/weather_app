@@ -15,6 +15,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   ) async* {
     if (event is FetchWeather) {
       yield WeatherIsLoadingState();
+     // await Future.delayed(Duration(hours: 1));
       var resultFromStorage =
           await DailyForecast.getWeatherForecastsFromStorage(
               dateTime: event.dateTime);
@@ -25,7 +26,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         var resultsFromApi = await WeatherApi().getWeatherForecast();
         if (resultsFromApi != null) {
           DailyForecast dailyForecast = resultsFromApi.firstWhere(
-              (element) => compareDates(element.dateTime, event.dateTime));
+              (element) => compareDates(element.dateTime, event.dateTime),orElse: () => resultsFromApi.first,);
           DailyForecast.saveWeatherForecastsInStorage(
               dateTime: dailyForecast.dateTime, dailyForecast: dailyForecast);
           print('Get ${dateTimeToString(event.dateTime)} Forecast From Api');

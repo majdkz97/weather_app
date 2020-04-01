@@ -7,7 +7,7 @@ class WeatherApi extends ApiService {
   Future<List<DailyForecast>> getWeatherForecast() async {
     try {
       params.addAll({
-        'id':'${DataHelper.cityId}',
+        'id':'${DataHelper.selectedCity.cityId}',
         'appid':'${DataHelper.appId}'
       });
       var response = await request(HttpMethod.GET, 'forecast');

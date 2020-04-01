@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/pages/home_page.dart';
-import 'package:weatherapp/pages/splash_screen.dart';
+import 'package:weatherapp/pages/splash_screen_page.dart';
 
 import 'pages/weather_page.dart';
 
@@ -20,7 +20,7 @@ class Router {
         case homeRoute:
         return MaterialPageRoute(builder: (_) => HomePage());
       case weatherRoute:
-        return MaterialPageRoute(builder: (_) => WeatherPage());
+        return MaterialPageRoute(builder: (_) => WeatherPage(dateTime: settings.arguments,));
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

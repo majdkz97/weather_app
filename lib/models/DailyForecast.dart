@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:weatherapp/helpers/data_helper.dart';
 import 'package:weatherapp/helpers/date_converters.dart';
 import 'package:weatherapp/models/HourlyForecast.dart';
 import 'package:weatherapp/repositories/storage_service.dart';
@@ -58,13 +59,13 @@ class DailyForecast {
 
   static Future<bool> saveWeatherForecastsInStorage({DateTime dateTime,DailyForecast dailyForecast}) async
   {
-    await StorageService().write(dateTimeToString(dateTime),jsonEncode(dailyForecast.toJson()));
+    await StorageService().write(DataHelper.selectedCity.cityId+dateTimeToString(dateTime),jsonEncode(dailyForecast.toJson()));
     return true;
   }
 
   static Future<DailyForecast> getWeatherForecastsFromStorage({DateTime dateTime}) async
   {
-    var result = await StorageService().read(dateTimeToString(dateTime));
+    var result = await StorageService().read(DataHelper.selectedCity.cityId+dateTimeToString(dateTime));
     if(result==null)
       return null;
     else
