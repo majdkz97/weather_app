@@ -11,7 +11,7 @@ Color darkFocusColor = Colors.white.withOpacity(0.12);
     secondaryVariant: const Color(0xFF451B6F),
     background: const Color(0xFF241E30),
     surface: const Color(0xFF1F1929),
-    onBackground: Colors.white.withOpacity(0.05),
+    onBackground: const Color(0xFF241E30),
     error: darkFillColor,
     onError: darkFillColor,
     onPrimary: darkFillColor,
