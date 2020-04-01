@@ -1,16 +1,29 @@
-# weatherapp
+# Weather Today
 
-A new Flutter application.
+This app will help you to keep update with daily weather forecasts.
 
-## Getting Started
+## Features
+- Weather forecasts for multiple cities (Dubai - Aleppo - Moscow)
+- 3 Days weather forecasts for each city.
+- Hourly weather forecast for each day.
+- Weather forecasts cached using (Shared Preferences)
+- State Management using Bloc pattern to fetch weather forecasts.
+- Flare animation used in weather conditions,home page and splash screen
+- Dynamic Theming (Light Mode - Dark Mode)
 
-This project is a starting point for a Flutter application.
+## Download App
+- [Android Version](http://majd-kazmoz.tech/Weather%20Today.apk)
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Dark mode
+![Horizontal](screenshots/dark.jpg)
+### Light Mode
+![Horizontal](screenshots/light.jpg)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Flare Animations
+- Created with [Rive](http://rive.app)
+- My Account on rive: [Majd.kazmoz](https://rive.app/a/MajdKazmoz)
+- Animation used in  [Splash Screen](https://rive.app/a/MajdKazmoz/files/flare/splash-screen-weather-app/preview)
+- Animation used in  [Home Page](https://rive.app/a/MajdKazmoz/files/flare/home-page-weather-app/preview)
+- Animation used in  [Weather Conditions](https://rive.app/a/MajdKazmoz/files/flare/weather-conditions/preview)
