@@ -1,6 +1,4 @@
-
-
-import 'package:weatherapp/models/City.dart';
+import 'package:weatherapp/models/city.dart';
 import 'package:weatherapp/themes/app_theme.dart';
 
 class DataHelper {

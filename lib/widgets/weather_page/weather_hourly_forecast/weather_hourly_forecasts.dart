@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/models/DailyForecast.dart';
+import 'package:weatherapp/models/daily_forecast.dart';
 import 'package:weatherapp/widgets/animator.dart';
 import 'package:weatherapp/widgets/weather_page/weather_hourly_forecast/weather_hourly_item.dart';
 

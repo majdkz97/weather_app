@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:weatherapp/models/DailyForecast.dart';
+import 'package:weatherapp/models/daily_forecast.dart';
 
 abstract class WeatherState extends Equatable {
   const WeatherState();

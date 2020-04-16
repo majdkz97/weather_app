@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dark_theme.dart';
 import 'light_theme.dart';
 import 'text_theme.dart';
+
 enum AppThemes {
   lightMode,
   darkMode,

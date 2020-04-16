@@ -1,6 +1,6 @@
 import 'package:weatherapp/helpers/data_helper.dart';
-import 'package:weatherapp/models/DailyForecast.dart';
-import 'package:weatherapp/models/HourlyForecast.dart';
+import 'package:weatherapp/models/daily_forecast.dart';
+import 'package:weatherapp/models/hourly_forecast.dart';
 import '../api_service.dart';
 
 class WeatherApi extends ApiService {

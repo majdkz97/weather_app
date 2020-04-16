@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:weatherapp/models/HourlyForecast.dart';
+import 'package:weatherapp/models/hourly_forecast.dart';
 import 'package:weatherapp/widgets/weather_page/weather_now/weather_condition_flare.dart';
 
 import '../../animator.dart';

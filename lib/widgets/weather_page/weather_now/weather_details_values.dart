@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/helpers/data_helper.dart';
 import 'package:weatherapp/helpers/screen.dart';
-import 'package:weatherapp/models/HourlyForecast.dart';
+import 'package:weatherapp/models/hourly_forecast.dart';
 import 'package:weatherapp/widgets/animator.dart';
 
 import 'weather_property.dart';

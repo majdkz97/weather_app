@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:weatherapp/helpers/data_helper.dart';
 import 'package:weatherapp/helpers/date_converters.dart';
-import 'package:weatherapp/models/HourlyForecast.dart';
+import 'package:weatherapp/models/hourly_forecast.dart';
 import 'package:weatherapp/repositories/storage_service.dart';
 
 class DailyForecast {

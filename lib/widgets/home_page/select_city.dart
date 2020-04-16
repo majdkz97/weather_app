@@ -1,7 +1,7 @@
 import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter/material.dart';
 import 'package:weatherapp/helpers/data_helper.dart';
-import 'package:weatherapp/models/City.dart';
+import 'package:weatherapp/models/city.dart';
 import 'package:weatherapp/widgets/animator.dart';
 
 class SelectCity extends StatefulWidget {

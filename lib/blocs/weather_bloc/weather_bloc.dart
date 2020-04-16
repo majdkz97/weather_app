@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:weatherapp/helpers/date_converters.dart';
-import 'package:weatherapp/models/DailyForecast.dart';
+import 'package:weatherapp/models/daily_forecast.dart';
 import 'package:weatherapp/repositories/api/weather/weather_api.dart';
 import './bloc.dart';
 
@@ -15,7 +15,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   ) async* {
     if (event is FetchWeather) {
       yield WeatherIsLoadingState();
-     // await Future.delayed(Duration(hours: 1));
+
       var resultFromStorage =
           await DailyForecast.getWeatherForecastsFromStorage(
               dateTime: event.dateTime);
