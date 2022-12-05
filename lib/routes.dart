@@ -4,7 +4,7 @@ import 'package:weatherapp/pages/splash_screen_page.dart';
 
 import 'pages/weather_page.dart';
 
-class Router {
+class AppRouter {
   static const String splashScreenRoute = '/';
   static const String homeRoute = '/home';
   static const String weatherRoute = '/weather';

@@ -10,7 +10,7 @@ import 'repositories/storage_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  BlocSupervisor.delegate = SimpleBlocDelegate();
+  // BlocSupervisor.delegate = SimpleBlocDelegate();
   DataHelper.selectedTheme = (await StorageService().read('AppTheme'))=='light'?AppThemes.lightMode:AppThemes.darkMode;
   runApp(MyApp());
 }
@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
         builder: (BuildContext ctx, ThemeState state) {
           return MaterialApp(
             title: 'Weather App',
-            onGenerateRoute: Router.generateRoute,
-            initialRoute: Router.splashScreenRoute,
+            onGenerateRoute: AppRouter.generateRoute,
+            initialRoute: AppRouter.splashScreenRoute,
             theme: state.themeData,
             debugShowCheckedModeBanner: false,
           );

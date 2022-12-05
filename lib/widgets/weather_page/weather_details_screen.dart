@@ -42,8 +42,8 @@ class _WeatherDetailsState extends State<WeatherDetails> {
 
   void onBackButtonPressed(){
     Navigator.pop(context);
-    print('Pop Route: ${Router.weatherRoute}');
-    print('Current Route: ${Router.homeRoute}');
+    print('Pop Route: ${AppRouter.weatherRoute}');
+    print('Current Route: ${AppRouter.homeRoute}');
   }
 
   @override
@@ -94,8 +94,8 @@ class _WeatherDetailsState extends State<WeatherDetails> {
         Positioned(
           top: Screen(context).statusBar(),
           child:  NavigatorBackButton(
-            from: Router.weatherRoute,
-            to: Router.homeRoute,
+            from: AppRouter.weatherRoute,
+            to: AppRouter.homeRoute,
           ),
         ),
         Positioned(

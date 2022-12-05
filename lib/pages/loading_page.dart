@@ -9,8 +9,8 @@ class LoadingPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: NavigatorBackButton(
-          from: Router.weatherRoute,
-          to: Router.homeRoute,
+          from: AppRouter.weatherRoute,
+          to: AppRouter.homeRoute,
         ),
       ),
       body: Center(child: Column(

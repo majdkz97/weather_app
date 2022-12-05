@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
        body: FlareActor('assets/splash_screen.flr',
          animation: DataHelper.selectedTheme==AppThemes.darkMode?'dark':'light',
          fit: BoxFit.cover,callback: (value){
-         Navigator.pushReplacementNamed(context,Router.homeRoute);
+         Navigator.pushReplacementNamed(context,AppRouter.homeRoute);
        },),
     );
   }

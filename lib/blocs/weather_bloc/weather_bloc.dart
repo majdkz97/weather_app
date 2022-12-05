@@ -6,8 +6,7 @@ import 'package:weatherapp/repositories/api/weather/weather_api.dart';
 import './bloc.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
-  @override
-  WeatherState get initialState => InitialWeatherState();
+  WeatherBloc() : super(InitialWeatherState());
 
   @override
   Stream<WeatherState> mapEventToState(

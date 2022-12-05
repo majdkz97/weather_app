@@ -19,7 +19,7 @@ class DayItem extends StatelessWidget {
 
         child: RaisedButton(onPressed: () async {
          // await StorageService().clear();
-          Navigator.pushNamed(context, Router.weatherRoute,arguments: dateTime);
+          Navigator.pushNamed(context, AppRouter.weatherRoute,arguments: dateTime);
         },
           color: Theme.of(context).accentColor,
           shape: RoundedRectangleBorder(

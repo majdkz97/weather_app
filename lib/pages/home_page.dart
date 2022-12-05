@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherapp/blocs/theme_bloc/theme_bloc.dart';
@@ -59,6 +58,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       backgroundColor: Theme.of(context).colorScheme.onSurface,
       child: Icon(Icons.brightness_2,color:Theme.of(context).colorScheme.onBackground,),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       body: Flex(direction: Axis.vertical,
       children: <Widget>[
         homePageFlare(),

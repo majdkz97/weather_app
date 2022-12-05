@@ -48,7 +48,7 @@ class _WeatherPageBuilderState extends State<WeatherPageBuilder> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<WeatherBloc, WeatherState>(
-      bloc: BlocProvider.of<WeatherBloc>(context),
+      cubit: BlocProvider.of<WeatherBloc>(context),
       builder: (context, state) {
         if (state is WeatherIsLoadingState)
           return LoadingPage();

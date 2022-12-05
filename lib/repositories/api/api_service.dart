@@ -32,18 +32,18 @@ class ApiService {
     switch (method) {
       case HttpMethod.GET:
         return await http.get(
-          url,
+          Uri.parse(url),
           headers: headers,
         );
       case HttpMethod.POST:
         headers.addAll({'content-type': 'application/json'});
         print(headers);
-        return await http.post(url, headers: headers, body: jsonEncode(body));
+        return await http.post(Uri.parse(url), headers: headers, body: jsonEncode(body));
       case HttpMethod.UPDATE:
         headers.addAll({'content-type': 'application/json'});
-        return await http.put(url, headers: headers, body: jsonEncode(body));
+        return await http.put(Uri.parse(url), headers: headers, body: jsonEncode(body));
       case HttpMethod.DELETE:
-        return await http.delete(url, headers: headers);
+        return await http.delete(Uri.parse(url), headers: headers);
       default:
         throw Exception('Unknown mehtod');
     }

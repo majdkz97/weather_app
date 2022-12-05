@@ -1,4 +1,4 @@
-import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
+import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:flutter/material.dart';
 import 'package:weatherapp/helpers/data_helper.dart';
 import 'package:weatherapp/models/city.dart';
@@ -39,7 +39,10 @@ class _SelectCityState extends State<SelectCity> {
                 fit: FlexFit.tight,
                 flex: 60,
                 child: CustomRadioButton(
-                  buttonColor: Theme.of(context).canvasColor,
+                  unSelectedColor: Theme.of(context).canvasColor,
+                  buttonTextStyle: ButtonTextStyle(
+                    unSelectedColor: Theme.of(context).primaryColor
+                  ),
                   buttonLables: [
                     DataHelper.cityDubai.cityName,
                     DataHelper.cityAleppo.cityName,
@@ -50,9 +53,12 @@ class _SelectCityState extends State<SelectCity> {
                     DataHelper.cityAleppo,
                     DataHelper.cityMoscow
                   ],
+                  defaultSelected: DataHelper.cityDubai,
                   radioButtonValue: (value) => selectCity(value) ,
                   selectedColor: Theme.of(context).accentColor,
                 ),
+
+
               )
 
             ],
