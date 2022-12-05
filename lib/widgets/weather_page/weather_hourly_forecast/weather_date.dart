@@ -11,30 +11,37 @@ Widget weatherDate({DateTime dateTime}){
       child: Container(
         alignment: Alignment.centerLeft,
         padding: EdgeInsets.symmetric(horizontal: 20),
-        child:  RichText(
-          textAlign: TextAlign.start,
-          text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '${datetimeToNamedDay(dateTime)}',
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w300
-                  ),
-                ),
-                TextSpan(
-                    text: '\n'
-                ),
-                TextSpan(
-                  text: '${dateTimeToString(dateTime)}',
-                  style: TextStyle(
-                      fontSize: 42,
-                      fontWeight: FontWeight.w300,
-                   ),
-                ),
+        child:  Builder(
+          builder: (context) {
+            return RichText(
+              textAlign: TextAlign.start,
+              text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: '${datetimeToNamedDay(dateTime)}',
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w300,
+                        color: Theme.of(context).primaryColor
+                      ),
+                    ),
+                    TextSpan(
+                        text: '\n'
+                    ),
+                    TextSpan(
+                      text: '${dateTimeToString(dateTime)}',
+                      style: TextStyle(
+                          fontSize: 42,
+                          fontWeight: FontWeight.w300,
+                          color: Theme.of(context).primaryColor
 
-              ]
-          ),
+                      ),
+                    ),
+
+                  ]
+              ),
+            );
+          }
         ),
       ),
     ),

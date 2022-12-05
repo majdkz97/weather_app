@@ -15,9 +15,12 @@ dependencies:
   flare_flutter: ^3.0.2
   custom_radio_grouped_button: ^2.1.2+2
   intl: ^0.17.0
-
-
   cupertino_icons: ^1.0.5
+
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding.git
+      path: plugins/window_size
 
 dev_dependencies:
   flutter_test:

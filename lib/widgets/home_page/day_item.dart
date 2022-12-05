@@ -46,7 +46,8 @@ class DayItem extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w300,
-                        color: Theme.of(context).colorScheme.onSecondary
+                        color: Theme.of(context).colorScheme.onSecondary,
+
                       ),
                     ),
 
